@@ -1,11 +1,27 @@
+let lang = confirm('Перевести страницу на русский язык?'),
+    weekRu = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
+    weekEn = ['Mon', 'Teu', 'Wen', 'Thr', 'Fr', 'Sat', 'Sun'];
+    week = [['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'], ['Mon', 'Teu', 'Wen', 'Thr', 'Fr', 'Sat', 'Sun']]
+    
+let question = lang ? alert(week[0]) : alert(week[1]);
 
-let num = 266219;
-num = num.toString().split('');
+let namePerson = prompt('Кто это?');
+let question2 = namePerson === 'Артем' ? console.log('Директор') : namePerson === 'Максим' ? console.log('Преподаватель') : console.log('Студент');
 
-let numBer = 1;
-for (let i = 0; i <= num.length - 1; i++){
-    numBer = numBer * num[i];
-}
-numBer = numBer ** 3;
+    //or...
+    /*
+    if (lang) {
+        alert(weekRu);
+    } else {
+        alert(weekEn);
+    } 
+    */
 
-console.log(numBer.toString().slice(0, 2));
+    //or...
+    /*
+    switch (lang) {
+        case true: alert(weekRu);
+        break;
+        case false: alert(weekEn);
+    }  
+    */
