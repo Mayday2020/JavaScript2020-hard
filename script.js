@@ -1,27 +1,15 @@
-let lang = confirm('Перевести страницу на русский язык?'),
-    weekRu = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
-    weekEn = ['Mon', 'Teu', 'Wen', 'Thr', 'Fr', 'Sat', 'Sun'];
-    week = [['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'], ['Mon', 'Teu', 'Wen', 'Thr', 'Fr', 'Sat', 'Sun']]
-    
-let question = lang ? alert(week[0]) : alert(week[1]);
+' use strict';
 
-let namePerson = prompt('Кто это?');
-let question2 = namePerson === 'Артем' ? console.log('Директор') : namePerson === 'Максим' ? console.log('Преподаватель') : console.log('Студент');
+const fu = function (data) {
+    if (typeof data !== 'string') {
+        return 'НЕ строка!!!';
+    }
+    else {
+        data = data.trim();
+        if (data.length > 30){
+            return data.substring(0, 30) + '...';
+        }
+    }
+};
 
-    //or...
-    /*
-    if (lang) {
-        alert(weekRu);
-    } else {
-        alert(weekEn);
-    } 
-    */
-
-    //or...
-    /*
-    switch (lang) {
-        case true: alert(weekRu);
-        break;
-        case false: alert(weekEn);
-    }  
-    */
+console.log('fu: ', fu('    123456789012345678901234567890123456789   '));
