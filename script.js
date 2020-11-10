@@ -1,15 +1,27 @@
 ' use strict';
 
-const fu = function (data) {
-    if (typeof data !== 'string') {
-        return 'НЕ строка!!!';
-    }
-    else {
-        data = data.trim();
-        if (data.length > 30){
-            return data.substring(0, 30) + '...';
+const start = () => {
+    let num = 22;
+    const quest = () => {
+        let result = prompt('Угадай число от 1 до 100!');
+        if (isNaN(result)) {
+            alert("Введи число!");
+            quest();
+        } else {
+            if (result === null){
+                alert("Досвидания!");
+            } else if (result > num) {
+                alert("Загаданное число меньше");
+                quest();
+            } else if (result < num) {
+                alert("Загаданное число больше");
+                quest();
+            } else if (result == num) {
+                alert("Верно!!!");
+            }
         }
-    }
+    };
+    quest();
+    console.dir(quest);
 };
-
-console.log('fu: ', fu('    123456789012345678901234567890123456789   '));
+start();
